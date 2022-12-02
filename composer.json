@@ -1,0 +1,21 @@
+{
+    "name": "ksurdy/aoc2022",
+    "autoload": {
+        "psr-4": {
+            "Ksurdy\\Aoc2022\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Krzysztof Surdy",
+            "email": "krzysztof.surdy@hometogo.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^5.4",
+        "myclabs/php-enum": "^1.8"
+    }
+}
