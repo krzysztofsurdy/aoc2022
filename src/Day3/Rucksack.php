@@ -2,8 +2,6 @@
 
 namespace Ksurdy\Aoc2022\Day3;
 
-use Symfony\Component\VarDumper\VarDumper;
-
 class Rucksack
 {
     /** @var RucksackPocket[] */

@@ -2,6 +2,8 @@
 
 namespace Ksurdy\Aoc2022\Day1;
 
+use Ksurdy\Aoc2022\FileYielder;
+
 class CaloriesDistributor
 {
     /**
@@ -13,20 +15,14 @@ class CaloriesDistributor
         $elves = [];
         $currentElf = new Elf();
 
-        $handle = fopen($filePath, "r");
-
-        if ($handle) {
-            while (($line = fgets($handle)) !== false) {
-                $load = (int)$line;
-                if ($load === 0) {
-                    $elves[] = $currentElf;
-                    $currentElf = new Elf();
-                }
-
-                $currentElf->addCarriedCalories($load);
+        foreach (FileYielder::yieldLines($filePath) as $line) {
+            $load = (int)$line;
+            if ($load === 0) {
+                $elves[] = $currentElf;
+                $currentElf = new Elf();
             }
 
-            fclose($handle);
+            $currentElf->addCarriedCalories($load);
         }
 
         return $elves;
